@@ -1,0 +1,20 @@
+NAME
+  tmpdir_block
+
+INSTALL
+  gem install tmpdir_block
+
+DESCRIPTION
+  extends ruby's built-in Dir.tmpdir to accept a block.  iff a block is given
+  a tmp directory will be created an the calling process chdir'd into it
+  before the block is called.  the tmpdirs are automatically cleaned up unless
+  a 'turd' option is given.
+
+USAGE
+  require 'tmpdir_block'
+
+  Dir.tmpdir do
+    puts 'this code is called in a freshly created tmpdir...'
+
+    p Dir.pwd
+  end
